@@ -1,5 +1,5 @@
 import { MainView } from './views/main/main.js'
-
+import './style.css';
 class App {
     routes = [
       {

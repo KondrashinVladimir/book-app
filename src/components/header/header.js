@@ -1,5 +1,5 @@
 import { DivComponent } from "../../common/div-component.js";
-
+import './header.css';
 export class Header extends DivComponent {
     constructor(appState) {
         super();
@@ -13,6 +13,20 @@ export class Header extends DivComponent {
             <div>
                 <img src="/logo.svg" alt="Логотип" />
             </div>
+            <div class="menu">
+                <a class="menu__item" href="#">
+                    <img src="/search.svg" alt="Поиск иконка"/>
+                    Поиск книг    
+                </a>
+                <a class="menu__item" href="#favorites">
+                    <img src="/search.svg" alt="Избранное иконка"/>
+                    Избранное
+                    <div class="menu__counter">
+                        ${this.appState.favorites.length}
+                    </div>    
+                </a>
+            </div>
+            
         `;
         return this.el;
     }
