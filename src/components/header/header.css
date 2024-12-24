@@ -10,10 +10,11 @@
 .menu {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
 }
 
 .menu__item {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -22,6 +23,25 @@
     color: var(--black);
     text-decoration: none;
 }
+
+.menu__item--search::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url("/search.svg");
+    left: -26px;
+}
+
+.menu__item--favorites::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url("/favorites.svg");
+    left: -28px;
+}
+
 
 .menu__item:visited {
     color: var(--black);

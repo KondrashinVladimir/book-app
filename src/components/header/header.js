@@ -7,19 +7,16 @@ export class Header extends DivComponent {
     }
 
     render() {
-        this.el.innerHTML = '';
         this.el.classList.add('header');
         this.el.innerHTML = `
             <div>
-                <img src="/logo.svg" alt="Логотип" />
+                <img src="/logo.svg" alt="Логотип" width="40" height="40" />
             </div>
             <div class="menu">
-                <a class="menu__item" href="#">
-                    <img src="/search.svg" alt="Поиск иконка"/>
-                    Поиск книг    
+                <a class="menu__item menu__item--search" href="#">
+                    Поиск книг
                 </a>
-                <a class="menu__item" href="#favorites">
-                    <img src="/search.svg" alt="Избранное иконка"/>
+                <a class="menu__item menu__item--favorites" href="#favorites">
                     Избранное
                     <div class="menu__counter">
                         ${this.appState.favorites.length}
