@@ -1,4 +1,3 @@
-
 import { DivComponent } from "../../common/div-component.js";
 import './search.css';
 
@@ -29,7 +28,11 @@ export class Search extends DivComponent {
             </button>
         `;
         this.el.querySelector('.search__button').addEventListener('click', this.search.bind(this));
-        this.el.querySelector('input').addEventListener('Enter', this.search.bind(this));
+        this.el.querySelector('input').addEventListener('keydown', (event) => {
+            if (event.code === "Enter") {
+                this.search();
+            }
+        });
         return this.el;
     }
 }
